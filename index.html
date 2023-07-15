@@ -1,41 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <link rel="stylesheet" href="/index.css">
-    <script src="/first.js"></script>
+  <!-- Your head content goes here -->
 </head>
-
 <body>
-    <div class="container">
-        <h1>this is my heading</h1>
-        <p id="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore tempora aliquid ea. Iste,
-            minima est! Quas quam cumque doloribus nostrum iure eius dicta dolorem distinctio animi rem exercitationem
-            ducimus nisi, omnis corporis voluptatum ad, eveniet voluptate dolor error, iste aliquid accusamus corrupti?
-            Vel, possimus deserunt. Dolor ea corrupti cumque, laudantium accusantium quae ab dolorum cupiditate illum
-            delectus velit autem? Mollitia aspernatur quisquam tempora ea excepturi, deserunt est inventore, numquam
-            odio recusandae porro tenetur libero exercitationem aliquam praesentium molestiae vero repellendus, sunt
-            natus non impedit ipsum perspiciatis provident? Repellendus, sint rem consectetur veniam ratione quaerat
-            sunt doloremque inventore minus non soluta quisquam repellat magnam voluptate voluptatum! Explicabo
-            recusandae minus at, ea a ex voluptatem? At maiores, error, animi eum perspiciatis alias vero nemo,
-            repellendus quod cumque provident debitis. Id expedita atque voluptatibus iste nemo dolore ipsum aspernatur
-            voluptatem eum tenetur! Debitis illum ad, ut, corrupti eaque ab eos facilis sapiente temporibus aperiam
-            repudiandae excepturi culpa dolores molestiae pariatur ratione repellat laboriosam cupiditate? Temporibus
-            suscipit deleniti reiciendis voluptate et ea fugiat, dicta blanditiis eius quia voluptas deserunt natus
-            adipisci reprehenderit dolorum totam possimus. Ipsa dicta aut quos accusamus laborum nisi id? Debitis maxime
-            facere hic commodi perspiciatis, voluptate mollitia eligendi, consectetur atque vel soluta iste ipsa dolor
-            optio aliquid iure sit? Animi officiis inventore rem corporis doloremque facilis vero esse mollitia? Optio
-            neque ratione sequi similique, distinctio eius. Voluptatibus quis perspiciatis obcaecati. Accusamus, nisi
-            ipsa.</p>
-            
-    </div>
+  <!-- Your HTML content goes here -->
 
-    <button id="btn" onclick="toggleHide()">Show/Hide</button>
-    <div id="www">Now the time is : <span id="time"></span></div>
+  <script>
+    // Call loadscript here
+    function loadscript(src) {
+  let script = document.createElement("script");
+  script.src = src;
+  script.onload = function () {
+    console.log("script loaded with src : " +  src);
+  };
+  document.body.appendChild(script);
+}
+
+loadscript(
+  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+);
+
+  </script>
+</body>
+</html>
+
 
 
 

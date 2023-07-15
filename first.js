@@ -2,7 +2,6 @@
 // const width=3.14
 // let area
 
-
 // area=length*width
 // console.log(area)
 // let num=1525624825555555555555584885555555555555555554854n
@@ -10,26 +9,20 @@
 // let user= "sa\thil\naktar  \n\"hello world\""
 // console.log(user)
 
-
 // let bool= 5<3
 // console.log(typeof bool)
 
 // let user1= null
 // console.log(user1)
 
-
 // let user2 = 3.3
 // console.log(typeof user2)
-
 
 // let x = String(8)
 // console.log(typeof x)
 
-
-
 //  x=0
 //  console.log(Boolean(x))
-
 
 //  let num1 = 5/"sahil"
 //  console.log(num1)
@@ -75,7 +68,6 @@
 
 // let day = "saturday";
 
-
 // //switch case
 
 // switch(day){
@@ -103,7 +95,6 @@
 
 // }
 // console.log("get to work");
-
 
 //finding leargest number
 
@@ -134,7 +125,6 @@
 
 // console.log(`the addition of ${x} and ${y} is ${result}`)
 
-
 //for loop.......
 
 // for(let i=0;i<5;i++){
@@ -145,7 +135,6 @@
 //      if(i%2===0)
 //      console.log(i);
 // }
-
 
 // let i = 90;
 
@@ -177,13 +166,11 @@
 
 // //for...of
 
-
 // let names =["sahil","riju","sumit"];
 
 // for(let name in names){
 //     console.log(name, names[name])
 // }
-
 
 // //function...
 
@@ -195,11 +182,8 @@
 
 // cookmaggi(2,4,1);
 
-
-
 // function greet()
 // {
-
 
 // let alien = {
 //     name: 'sahil',
@@ -218,15 +202,11 @@
 // }
 // alien.ggg()
 
-
-
 // console.log(alien.laptop['dolby atmos'])
 
 // }
 
 // greet()
-
-
 
 // for( i=0;i<5;i++){
 //     console.log("I Love Ritwika")
@@ -239,8 +219,6 @@
 
 // }
 
-
-
 // function hey(user,user1)
 // {
 //     return `hello ${user} ${user1}`
@@ -249,8 +227,6 @@
 
 // let str = hey(user,user1)
 // console.log(str);
-
-
 
 // function propose(user1,user2,user3)
 // {
@@ -262,17 +238,9 @@
 // let str1 = propose(user1,user2)
 // console.log(str1)
 
-
 // let add = (num1,num2)=>num1 + num2;
 
-
 // console.log(add(5,6))
-
-
-
-
-
-
 
 // function greet(u)
 // {
@@ -281,9 +249,6 @@
 // let user = "Ritwika"
 // let str = greet(user)
 // console.log(str)
-
-
-
 
 // function greet(user)
 // {
@@ -302,7 +267,6 @@
 //     return`${user1} ${user2} weds ${user3} ${user4}`
 // }
 
-
 // let user1 = "Ritwika";
 // let user2 = "Sarkar";
 // let user3 = "Sahil";
@@ -314,7 +278,6 @@
 // let arrow  = (user) => `hello ${user}`
 
 // console.log(arrow("sahil"))
-
 
 // let f1 = (num10,num11)=> Math.abs(num10) + Math.abs(num11)
 
@@ -347,7 +310,6 @@
 //     alert("it's not devisible by 2 and 3")
 // }
 
-
 // class person{
 //     constructor(name,age){
 //     this.name = name;
@@ -364,11 +326,8 @@
 
 //  person2.name = "Sahil"
 
-
-
 // console.log(person2)
 // person1.relation()
-
 
 // let array1= [1,2,3,4,5,6,7,8,9,10];
 // // let array2 = [11,12,13,14,15,16,17,18,19,20];
@@ -379,7 +338,6 @@
 
 // console.log(newArray)
 // // console.log(array1)
-
 
 // let compare =(a,b)=>{
 //     return b-a;
@@ -392,7 +350,6 @@
 
 // console.log(name + 'is a good boy');
 
-
 // let n = prompt("enter a number to check if it is prime or not");
 
 // if(n%2==0){
@@ -401,10 +358,6 @@
 // else{
 //     alert("it is not a prime number");
 // }
-
-
-
-
 
 // let person = prompt("enter your age :");
 // if(person<18){
@@ -425,25 +378,40 @@
 // else{
 //     alert("your post has not been deleted");
 // }
-function toggleHide() {
-    let btn = document.getElementById('btn');
-    
-    
-    let para = document.getElementById('para');
-    
+// function toggleHide() {
+//     let btn = document.getElementById('btn');
 
-    if (para.style.display != 'none') {
-        para.style.display = 'none';
-    } else {
-        para.style.display = 'block';
-    }
-    
+//     let para = document.getElementById('para');
+
+//     if (para.style.display != 'none') {
+//         para.style.display = 'none';
+//     } else {
+//         para.style.display = 'block';
+//     }
+
+// }
+
+// function displayTime(){
+//     let time=new Date();
+//     console.log(time);
+//     document.getElementById('time').innerHTML=time;
+// }
+
+// setInterval(displayTime,1000);
+
+// setTimeout(function(){
+//     console.log("hello world");
+// },3000)
+
+function loadscript(src) {
+  let script = document.createElement("script");
+  script.src = src;
+  script.onload = function () {
+    console.log("script loaded");
+  };
+  document.body.appendChild(script);
 }
 
-function displayTime(){
-    let time=new Date();
-    console.log(time);
-    document.getElementById('time').innerHTML=time;
-}
-
-setInterval(displayTime,1000);
+loadscript(
+  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+);
