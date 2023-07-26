@@ -403,15 +403,56 @@
 //     console.log("hello world");
 // },3000)
 
-function loadscript(src) {
+// Call loadscript here
+function loadscript(src, callback) {
   let script = document.createElement("script");
   script.src = src;
   script.onload = function () {
-    console.log("script loaded");
+    console.log("script loaded with src : " + src);
+    callback(null, src);
   };
+  script.onerror = function () {
+    console.log("error loading script with scr : " + src);
+    callback(new Error("script not loaded"));
+  };
+
   document.body.appendChild(script);
 }
 
 loadscript(
-  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+  bade
 );
+
+function greet(error, src) {
+  alert("hello sahil " + src);
+}
+
+function bade(error, src) {
+  if (error) {
+    console.log(error);
+    return;
+  }
+  alert("good morning, script loaded with src: " + src);
+}
+
+let p1 = new Promise(function (resolve, reject) {
+  console.log("promise is pending");
+  setTimeout(()=>{
+    console.log("promise is resolved");
+    resolve(true)
+    
+  },5000)
+  
+
+});
+let p2 = new Promise(function (resolve, reject) {
+  console.log("promise is pending");
+  setTimeout(()=>{
+    console.log("promise is rejected");
+    reject(new Error("error occured in p2"))
+    
+  },5000)
+  
+
+});
