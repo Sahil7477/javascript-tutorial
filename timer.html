@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="timer"></h1>
+  </body>
+  <script>
+    let timerInput = 11;
+    let seconds = 2;
+
+    var x = setInterval(function () {
+      if (seconds > 0) {
+        seconds--;
+      } else {
+        timerInput--;
+        seconds = 2;
+      }
+
+      document.getElementById("timer").innerHTML =
+        (timerInput < 10 ? "0" : "") +
+        timerInput +
+        ":" +
+        (seconds < 10 ? 0 : "") +
+        seconds;
+      if (timerInput == 0 && seconds == 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "Time is up";
+      }
+    }, 1000);
+  </script>
+</html>

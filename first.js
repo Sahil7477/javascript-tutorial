@@ -404,55 +404,126 @@
 // },3000)
 
 // Call loadscript here
-function loadscript(src, callback) {
-  let script = document.createElement("script");
-  script.src = src;
-  script.onload = function () {
-    console.log("script loaded with src : " + src);
-    callback(null, src);
-  };
-  script.onerror = function () {
-    console.log("error loading script with scr : " + src);
-    callback(new Error("script not loaded"));
-  };
+// function loadscript(src, callback) {
+//   let script = document.createElement("script");
+//   script.src = src;
+//   script.onload = function () {
+//     console.log("script loaded with src : " + src);
+//     callback(null, src);
+//   };
+//   script.onerror = function () {
+//     console.log("error loading script with src : " + src);
+//     callback(new Error("script not loaded"));
+//   };
 
-  document.body.appendChild(script);
-}
+//   document.body.appendChild(script);
+// }
 
-loadscript(
-  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
-  bade
-);
+// loadscript(
+//   "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+//   bade
+// );
 
-function greet(error, src) {
-  alert("hello sahil " + src);
-}
+// function greet(error, src) {
+//   alert("hello sahil " + src);
+// }
 
-function bade(error, src) {
-  if (error) {
-    console.log(error);
-    return;
-  }
-  alert("good morning, script loaded with src: " + src);
-}
+// function bade(error, src) {
+//   if (error) {
+//     console.log(error);
+//     return;
+//   }
+//   alert("good morning, script loaded with src: " + src);
+// }
 
-let p1 = new Promise(function (resolve, reject) {
-  console.log("promise is pending");
-  setTimeout(()=>{
-    console.log("promise is resolved");
-    resolve(true)
-    
-  },5000)
+// let p1 = new Promise(function (resolve, reject) {
+//   console.log("promise is pending");
+//   setTimeout(() => {
+//     // console.log("promise is resolved");
+//     resolve(true);
+//   }, 5000);
+// });
+
+// let p2 = new Promise(function (resolve, reject) {
+//   console.log("promise is pending");
+//   setTimeout(() => {
+//     // console.log("promise is rejected");
+//     reject(new Error("error occured in p2"));
+//   }, 3000);
+// });
+
+// p1.then((value) => {
+//   console.log(value);
+// });
+// p2.catch((error) => {
+//   console.log("some error occured in p2");
+// });
+
+// let promise = new Promise(function (resolve, reject) {
+//   console.log("promise is pending");
+//   setTimeout(() => {
+//     // console.log("promise is resolved");
+//     reject("it is rejected");
+//   }, 1000);
+// });
+
+// promise.catch(alert)
+// +
+
+// p2.then((value) => {
+//   console.log(value);
+// }, (error) => {
+//   console.log(error);
+// });
+
+// let p1 =   new Promise((resolve,reject)=>{
+//   setTimeout(()=>{
+//     console.log("resolved after 2 sec");
+//     resolve(56)
+//   },2000);
   
-
-});
-let p2 = new Promise(function (resolve, reject) {
-  console.log("promise is pending");
-  setTimeout(()=>{
-    console.log("promise is rejected");
-    reject(new Error("error occured in p2"))
-    
-  },5000)
   
+// })
 
-});
+// p1.then((value)=>{
+//   console.log(value);
+//   let p2 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{resolve("promise 2") },2000)
+    
+    
+//   })
+//   return p2;
+// }).then((value)=>{
+//   console.log("we are done");
+// }).then((value)=>{
+//   console.log("now we are finally done")
+// })
+
+const loadscript=(src)=>{
+  return new Promise((resolve,reject)=>{
+    let script = document.createElement("script");
+    script.src = src;
+    script.onload = function () {
+      console.log("script loaded with src : " + src);
+      resolve(src);
+    };
+    script.onerror = function () {
+      console.log("error loading script with src : " + src);
+      reject(0);
+    };
+  
+    document.body.appendChild(script);
+  })
+}
+
+let p1=loadscript("https://cdn.jsdelivr.net/npm/sweetalert2@11")
+p1.then((value)=>{
+  console.log(value);
+}).then(()=>{
+  console.log('completed');
+})
+
+p1.catch((error)=>{
+  console.log("sorry error ");
+})
+
